@@ -5,6 +5,7 @@ import { courseHandlers } from "./courses";
 import { centerHandlers } from "./centers";
 import { adminHandlers } from "./admin";
 import { studentHandlers } from "./student";
+import { dashboardHandlers } from "./dashboard";
 
 export const handlers = [
   ...authHandlers,
@@ -14,4 +15,5 @@ export const handlers = [
   ...centerHandlers,
   ...adminHandlers,
   ...studentHandlers,
+  ...dashboardHandlers,
 ];

@@ -37,23 +37,17 @@ export const GRADE_SCALE = [
   { min: 0, grade: "D" },
 ] as const;
 
-export const INDIAN_STATES = [
-  "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
-  "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand",
-  "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur",
-  "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab",
-  "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura",
-  "Uttar Pradesh", "Uttarakhand", "West Bengal",
-  "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli and Daman and Diu",
-  "Delhi", "Jammu and Kashmir", "Ladakh", "Lakshadweep", "Puducherry",
-] as const;
+export const INDIAN_STATES = ["West Bengal"] as const;
 
-export const CATEGORIES = [
-  "General", "OBC", "SC", "ST", "EWS",
-] as const;
+export const CATEGORIES = ["General", "OBC", "SC", "ST", "EWS"] as const;
 
 export const QUALIFICATIONS = [
-  "Below 10th", "10th Pass", "12th Pass", "Graduate", "Post Graduate", "Other",
+  "Below 10th",
+  "10th Pass",
+  "12th Pass",
+  "Graduate",
+  "Post Graduate",
+  "Other",
 ] as const;
 
 export const SEXES = ["Male", "Female", "Other"] as const;
@@ -61,7 +55,11 @@ export const SEXES = ["Male", "Female", "Other"] as const;
 export const NATIONALITIES = ["Indian", "Other"] as const;
 
 export const ID_TYPES = [
-  "Aadhaar Card", "PAN Card", "Voter ID", "Passport", "Driving License",
+  "Aadhaar Card",
+  "PAN Card",
+  "Voter ID",
+  "Passport",
+  "Driving License",
 ] as const;
 
 export const EXAM_REMARKS = ["PASS", "FAIL"] as const;

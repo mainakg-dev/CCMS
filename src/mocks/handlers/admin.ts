@@ -25,4 +25,23 @@ export const adminHandlers = [
   http.post(mswUrl("/noticecreate"), () => {
     return HttpResponse.json({ message: "Notice created successfully" });
   }),
+
+  http.get(mswUrl("/fetchAllNotices"), () => {
+    return HttpResponse.json([
+      {
+        id: "notice1",
+        title: "Important System Update",
+        content: "The system will be down for maintenance this weekend.",
+        createdAt: new Date().toISOString(),
+        author: "Admin",
+      },
+      {
+        id: "notice2",
+        title: "Exam Schedule Released",
+        content: "The final exam schedule for DCA and PGDCA has been released.",
+        createdAt: new Date(Date.now() - 86400000).toISOString(),
+        author: "Admin",
+      },
+    ]);
+  }),
 ];

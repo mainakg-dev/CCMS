@@ -87,26 +87,26 @@ export default function NewEnrollmentPage() {
         {/* Step 1: Personal */}
         {step === 1 && (
           <Card className="animate-slide-up"><CardHeader><CardTitle>Personal Information</CardTitle></CardHeader><CardContent className="grid gap-4 sm:grid-cols-2">
-            <div className="space-y-2"><Label>Full Name *</Label><Input {...register("name")} />{errors.name && <p className="text-xs text-destructive">{errors.name.message}</p>}</div>
-            <div className="space-y-2"><Label>Father&apos;s Name *</Label><Input {...register("fatherName")} />{errors.fatherName && <p className="text-xs text-destructive">{errors.fatherName.message}</p>}</div>
-            <div className="space-y-2"><Label>Mother&apos;s Name *</Label><Input {...register("motherName")} />{errors.motherName && <p className="text-xs text-destructive">{errors.motherName.message}</p>}</div>
-            <div className="space-y-2"><Label>Date of Birth *</Label><Input type="date" {...register("dob")} />{errors.dob && <p className="text-xs text-destructive">{errors.dob.message}</p>}</div>
+            <div className="space-y-2"><Label htmlFor="full-name">Full Name *</Label><Input id="full-name" {...register("name")} />{errors.name && <p className="text-xs text-destructive">{errors.name.message}</p>}</div>
+            <div className="space-y-2"><Label htmlFor="father-name">Father&apos;s Name *</Label><Input id="father-name" {...register("fatherName")} />{errors.fatherName && <p className="text-xs text-destructive">{errors.fatherName.message}</p>}</div>
+            <div className="space-y-2"><Label htmlFor="mother-name">Mother&apos;s Name *</Label><Input id="mother-name" {...register("motherName")} />{errors.motherName && <p className="text-xs text-destructive">{errors.motherName.message}</p>}</div>
+            <div className="space-y-2"><Label htmlFor="dob">Date of Birth *</Label><Input id="dob" type="date" {...register("dob")} />{errors.dob && <p className="text-xs text-destructive">{errors.dob.message}</p>}</div>
             <div className="space-y-2"><Label>Sex *</Label><Select onValueChange={(v) => setValue("sex", v as typeof SEXES[number])}><SelectTrigger><SelectValue placeholder="Select" /></SelectTrigger><SelectContent>{SEXES.map((s) => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent></Select>{errors.sex && <p className="text-xs text-destructive">{errors.sex.message}</p>}</div>
-            <div className="space-y-2"><Label>Mobile (10 digits) *</Label><Input {...register("mobile")} maxLength={10} />{errors.mobile && <p className="text-xs text-destructive">{errors.mobile.message}</p>}</div>
-            <div className="space-y-2 sm:col-span-2"><Label>Email *</Label><Input type="email" {...register("email")} />{errors.email && <p className="text-xs text-destructive">{errors.email.message}</p>}</div>
+            <div className="space-y-2"><Label htmlFor="mobile">Mobile (10 digits) *</Label><Input id="mobile" {...register("mobile")} maxLength={10} />{errors.mobile && <p className="text-xs text-destructive">{errors.mobile.message}</p>}</div>
+            <div className="space-y-2 sm:col-span-2"><Label htmlFor="email">Email *</Label><Input id="email" type="email" {...register("email")} />{errors.email && <p className="text-xs text-destructive">{errors.email.message}</p>}</div>
           </CardContent></Card>
         )}
 
         {/* Step 2: Address */}
         {step === 2 && (
           <Card className="animate-slide-up"><CardHeader><CardTitle>Address Details</CardTitle></CardHeader><CardContent className="grid gap-4 sm:grid-cols-2">
-            <div className="space-y-2 sm:col-span-2"><Label>Address *</Label><Input {...register("address")} />{errors.address && <p className="text-xs text-destructive">{errors.address.message}</p>}</div>
-            <div className="space-y-2"><Label>Village *</Label><Input {...register("vill")} />{errors.vill && <p className="text-xs text-destructive">{errors.vill.message}</p>}</div>
-            <div className="space-y-2"><Label>Post Office *</Label><Input {...register("po")} />{errors.po && <p className="text-xs text-destructive">{errors.po.message}</p>}</div>
-            <div className="space-y-2"><Label>Police Station *</Label><Input {...register("ps")} />{errors.ps && <p className="text-xs text-destructive">{errors.ps.message}</p>}</div>
-            <div className="space-y-2"><Label>District *</Label><Input {...register("district")} />{errors.district && <p className="text-xs text-destructive">{errors.district.message}</p>}</div>
+            <div className="space-y-2 sm:col-span-2"><Label htmlFor="address">Address *</Label><Input id="address" {...register("address")} />{errors.address && <p className="text-xs text-destructive">{errors.address.message}</p>}</div>
+            <div className="space-y-2"><Label htmlFor="village">Village *</Label><Input id="village" {...register("vill")} />{errors.vill && <p className="text-xs text-destructive">{errors.vill.message}</p>}</div>
+            <div className="space-y-2"><Label htmlFor="post-office">Post Office *</Label><Input id="post-office" {...register("po")} />{errors.po && <p className="text-xs text-destructive">{errors.po.message}</p>}</div>
+            <div className="space-y-2"><Label htmlFor="police-station">Police Station *</Label><Input id="police-station" {...register("ps")} />{errors.ps && <p className="text-xs text-destructive">{errors.ps.message}</p>}</div>
+            <div className="space-y-2"><Label htmlFor="district">District *</Label><Input id="district" {...register("district")} />{errors.district && <p className="text-xs text-destructive">{errors.district.message}</p>}</div>
             <div className="space-y-2"><Label>State *</Label><Select onValueChange={(v) => setValue("state", v as typeof INDIAN_STATES[number])}><SelectTrigger><SelectValue placeholder="Select state" /></SelectTrigger><SelectContent>{INDIAN_STATES.map((s) => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent></Select>{errors.state && <p className="text-xs text-destructive">{errors.state.message}</p>}</div>
-            <div className="space-y-2"><Label>Pincode *</Label><Input {...register("pincode")} maxLength={6} />{errors.pincode && <p className="text-xs text-destructive">{errors.pincode.message}</p>}</div>
+            <div className="space-y-2"><Label htmlFor="pincode">Pincode *</Label><Input id="pincode" {...register("pincode")} maxLength={6} />{errors.pincode && <p className="text-xs text-destructive">{errors.pincode.message}</p>}</div>
           </CardContent></Card>
         )}
 

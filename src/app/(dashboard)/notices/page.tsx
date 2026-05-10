@@ -26,8 +26,8 @@ export default function NoticesPage() {
           <DialogContent>
             <DialogHeader><DialogTitle>Create Notice</DialogTitle></DialogHeader>
             <form onSubmit={handleSubmit((data) => createNotice(data, { onSuccess: () => { setOpen(false); reset(); } }))} className="space-y-4">
-              <div className="space-y-2"><Label>Title</Label><Input {...register("title", { required: true })} /></div>
-              <div className="space-y-2"><Label>Content</Label><Textarea {...register("content", { required: true })} rows={5} /></div>
+              <div className="space-y-2"><Label htmlFor="notice-title">Title</Label><Input id="notice-title" {...register("title", { required: true })} /></div>
+              <div className="space-y-2"><Label htmlFor="notice-content">Content</Label><Textarea id="notice-content" {...register("content", { required: true })} rows={5} /></div>
               <Button type="submit" className="w-full" disabled={isPending}>{isPending ? "Creating..." : "Publish Notice"}</Button>
             </form>
           </DialogContent>

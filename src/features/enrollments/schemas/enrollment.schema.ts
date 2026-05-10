@@ -40,7 +40,7 @@ export const enrollmentSchema = z.object({
     .string()
     .length(6, "Pincode must be exactly 6 digits")
     .regex(/^\d{6}$/, "Pincode must contain only digits"),
-  state: z.enum(INDIAN_STATES as unknown as [string, ...string[]], {
+  state: z.enum(INDIAN_STATES, {
     error: "Please select a state",
   }),
   district: z.string().min(1, "District is required"),

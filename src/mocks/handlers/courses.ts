@@ -37,4 +37,8 @@ export const courseHandlers = [
   http.post(mswUrl("/subjectAdd"), () => {
     return HttpResponse.json({ message: "Subject added successfully" });
   }),
+  
+  http.delete(mswUrl("/Delete_Course"), () => {
+    return HttpResponse.json({ message: "Course deleted successfully" });
+  }),
 ];

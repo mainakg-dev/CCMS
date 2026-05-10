@@ -74,9 +74,9 @@ export default function ExamsPage() {
               <CardHeader><CardTitle>Exam Form</CardTitle><CardDescription>Fill in exam details and submit</CardDescription></CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit((data) => submitForm(data))} className="space-y-4">
-                  <div className="space-y-2"><Label>ATI Code *</Label><Input {...register("atiCode")} />{errors.atiCode && <p className="text-xs text-destructive">{errors.atiCode.message}</p>}</div>
-                  <div className="space-y-2"><Label>Center Code *</Label><Input {...register("centerCode")} />{errors.centerCode && <p className="text-xs text-destructive">{errors.centerCode.message}</p>}</div>
-                  <div className="space-y-2"><Label>Payment Receipt No *</Label><Input {...register("lastPaymentReceiptNo")} />{errors.lastPaymentReceiptNo && <p className="text-xs text-destructive">{errors.lastPaymentReceiptNo.message}</p>}</div>
+                  <div className="space-y-2"><Label htmlFor="ati-code">ATI Code *</Label><Input id="ati-code" {...register("atiCode")} />{errors.atiCode && <p className="text-xs text-destructive">{errors.atiCode.message}</p>}</div>
+                  <div className="space-y-2"><Label htmlFor="center-code">Center Code *</Label><Input id="center-code" {...register("centerCode")} />{errors.centerCode && <p className="text-xs text-destructive">{errors.centerCode.message}</p>}</div>
+                  <div className="space-y-2"><Label htmlFor="receipt-no">Payment Receipt No *</Label><Input id="receipt-no" {...register("lastPaymentReceiptNo")} />{errors.lastPaymentReceiptNo && <p className="text-xs text-destructive">{errors.lastPaymentReceiptNo.message}</p>}</div>
                   <Button type="submit" className="w-full" disabled={isSubmitting || !studentInfo?.activated}>{isSubmitting ? "Submitting..." : "Submit Exam Form"}</Button>
                 </form>
               </CardContent>

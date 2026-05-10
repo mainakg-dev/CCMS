@@ -44,7 +44,11 @@ export default function CoursesPage() {
           <DialogContent>
             <DialogHeader><DialogTitle>Create Course</DialogTitle></DialogHeader>
             <form onSubmit={courseForm.handleSubmit((data) => createCourse(data, { onSuccess: () => { setCourseDialogOpen(false); courseForm.reset(); } }))} className="space-y-4">
-              <div className="space-y-2"><Label>Course Name</Label><Input {...courseForm.register("name")} />{courseForm.formState.errors.name && <p className="text-xs text-destructive">{courseForm.formState.errors.name.message}</p>}</div>
+              <div className="space-y-2">
+                <Label htmlFor="course-name">Course Name</Label>
+                <Input id="course-name" {...courseForm.register("name")} />
+                {courseForm.formState.errors.name && <p className="text-xs text-destructive">{courseForm.formState.errors.name.message}</p>}
+              </div>
               <div className="space-y-2"><Label>Duration</Label><Input {...courseForm.register("duration")} placeholder="e.g., 6 months" /></div>
               <div className="space-y-2"><Label>Description</Label><Input {...courseForm.register("description")} /></div>
               <Button type="submit" className="w-full" disabled={isCreating}>{isCreating ? "Creating..." : "Create Course"}</Button>

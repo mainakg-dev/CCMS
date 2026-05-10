@@ -21,7 +21,7 @@ export function useLogin() {
   return useMutation({
     mutationFn: async (data: LoginRequest) => {
       const res = await apiClient.post<LoginResponse>("/loginRoute", data);
-      return res.data;
+      return res.data; // TODO error fix
     },
     onSuccess: (data) => {
       setUser(data.user);
@@ -45,7 +45,7 @@ export function useStudentLogin() {
     mutationFn: async (data: StudentLoginRequest) => {
       const res = await apiClient.post<LoginResponse>("/studentLogin", data);
       return res.data;
-    },
+    }, // TODO error fix
     onSuccess: (data) => {
       setUser(data.user);
       toast.success("Login successful");

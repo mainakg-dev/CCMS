@@ -203,28 +203,59 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-image: 
+      radial-gradient(at 0% 0%, oklch(0.65 0.25 264 / 2%) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, oklch(0.7 0.22 300 / 2%) 0px, transparent 50%);
+    background-attachment: fixed;
   }
   html {
     @apply font-sans scroll-smooth;
+  }
+  button, 
+  a,
+  [role="button"],
+  label,
+  select,
+  input[type="checkbox"],
+  input[type="radio"] {
+    @apply cursor-pointer;
   }
 }
 
 /* ─── Utilities ─── */
 @layer utilities {
   .glass {
-    backdrop-filter: blur(16px) saturate(180%);
-    background: oklch(1 0 0 / 5%);
-    border: 1px solid oklch(1 0 0 / 8%);
+    backdrop-filter: blur(20px) saturate(160%);
+    background: oklch(1 0 0 / 10%);
+    border: 1px solid oklch(1 0 0 / 15%);
+    box-shadow: 0 4px 30px oklch(0 0 0 / 5%);
   }
 
   .glass-card {
-    backdrop-filter: blur(20px) saturate(200%);
-    background: oklch(1 0 0 / 4%);
-    border: 1px solid oklch(1 0 0 / 6%);
+    backdrop-filter: blur(24px) saturate(180%);
+    background: oklch(1 0 0 / 6%);
+    border: 1px solid oklch(1 0 0 / 12%);
     box-shadow:
       0 1px 2px oklch(0 0 0 / 5%),
-      0 8px 24px oklch(0 0 0 / 8%),
-      inset 0 1px 0 oklch(1 0 0 / 5%);
+      0 10px 30px -10px oklch(0 0 0 / 15%),
+      inset 0 1px 1px oklch(1 0 0 / 10%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    background: oklch(1 0 0 / 8%);
+    border: 1px solid oklch(1 0 0 / 20%);
+    box-shadow:
+      0 1px 2px oklch(0 0 0 / 5%),
+      0 20px 40px -15px oklch(0 0 0 / 20%),
+      inset 0 1px 1px oklch(1 0 0 / 15%);
+    transform: translateY(-2px);
+  }
+
+  .glass-dark {
+    backdrop-filter: blur(20px) saturate(180%);
+    background: oklch(0.15 0.02 265 / 40%);
+    border: 1px solid oklch(1 0 0 / 10%);
   }
 
   .gradient-text {

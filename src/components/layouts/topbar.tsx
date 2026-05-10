@@ -21,7 +21,7 @@ export function Topbar({ onMenuToggle }: TopbarProps) {
   const user = useAuthStore((s) => s.user);
 
   return (
-    <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background/80 backdrop-blur-xl px-6">
+    <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b glass px-6 border-x-0">
       {/* Mobile menu */}
       <Button
         variant="ghost"

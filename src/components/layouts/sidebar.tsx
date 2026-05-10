@@ -54,7 +54,7 @@ export function AppSidebar({ collapsed, onToggle }: AppSidebarProps) {
   return (
     <aside
       className={cn(
-        "relative flex flex-col border-r border-sidebar-border bg-sidebar transition-all duration-300 ease-in-out h-full",
+        "relative flex flex-col border-r border-sidebar-border glass transition-all duration-300 ease-in-out h-full border-y-0 border-l-0",
         collapsed ? "w-[68px]" : "w-[260px]"
       )}
     >

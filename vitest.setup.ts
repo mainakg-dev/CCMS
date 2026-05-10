@@ -36,6 +36,7 @@ class MockIntersectionObserver implements IntersectionObserver {
   observe: (target: Element) => void = vi.fn();
   takeRecords: () => IntersectionObserverEntry[] = vi.fn();
   unobserve: (target: Element) => void = vi.fn();
+  scrollMargin: string = "";
 }
 
 Object.defineProperty(window, "IntersectionObserver", {

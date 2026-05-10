@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "bun --env-file=env/.env.development next dev",
+    "build": "bun --env-file=env/.env.production next build",
+    "start": "bun --env-file=env/.env.production next start",
     "lint": "eslint",
-    "test": "vitest"
+    "test": "bun --env-file=env/.env.test vitest"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",

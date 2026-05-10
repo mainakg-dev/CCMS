@@ -145,28 +145,55 @@
 
 /* ─── Keyframes ─── */
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slide-up {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slide-down {
-  from { opacity: 0; transform: translateY(-12px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes scale-in {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 20px oklch(0.65 0.25 264 / 0.1); }
-  50% { box-shadow: 0 0 40px oklch(0.65 0.25 264 / 0.2); }
+  0%,
+  100% {
+    box-shadow: 0 0 20px oklch(0.65 0.25 264 / 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px oklch(0.65 0.25 264 / 0.2);
+  }
 }
 
 /* ─── Base ─── */
@@ -201,7 +228,11 @@
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, oklch(0.65 0.25 264), oklch(0.7 0.22 300));
+    background: linear-gradient(
+      135deg,
+      oklch(0.65 0.25 264),
+      oklch(0.7 0.22 300)
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -218,7 +249,11 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, oklch(0.65 0.25 264 / 40%), oklch(0.7 0.22 300 / 40%));
+    background: linear-gradient(
+      135deg,
+      oklch(0.65 0.25 264 / 40%),
+      oklch(0.7 0.22 300 / 40%)
+    );
     mask:
       linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);

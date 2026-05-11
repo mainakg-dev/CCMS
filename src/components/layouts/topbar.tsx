@@ -1,23 +1,23 @@
 "use client";
 
-import { Moon, Sun, Menu, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useTheme } from "@/providers/theme-provider";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
 import { useAuthStore } from "@/stores/auth-store";
+import { useTheme } from "@wrksz/themes/client";
+import { Menu, Moon, Search, Sun } from "lucide-react";
 
 interface TopbarProps {
   onMenuToggle: () => void;
 }
 
 export function Topbar({ onMenuToggle }: TopbarProps) {
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
   const user = useAuthStore((s) => s.user);
 
   return (
@@ -44,13 +44,15 @@ export function Topbar({ onMenuToggle }: TopbarProps) {
       <div className="ml-auto flex items-center gap-2">
         {/* Theme Toggle */}
         <DropdownMenu>
-          <DropdownMenuTrigger render={
-            <Button variant="ghost" size="icon" className="h-9 w-9">
-              <Sun className="h-4 w-4 rotate-0 scale-100 transition-transform dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-transform dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">Toggle theme</span>
-            </Button>
-          } />
+          <DropdownMenuTrigger
+            render={
+              <Button variant="ghost" size="icon" className="h-9 w-9">
+                <Sun className="h-4 w-4 rotate-0 scale-100 transition-transform dark:-rotate-90 dark:scale-0" />
+                <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-transform dark:rotate-0 dark:scale-100" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+            }
+          />
           <DropdownMenuContent align="end">
             <DropdownMenuItem onClick={() => setTheme("light")}>
               Light

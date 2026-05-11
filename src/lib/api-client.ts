@@ -12,13 +12,9 @@ const apiClient = axios.create({
 // Request interceptor
 apiClient.interceptors.request.use(
   (config) => {
-    // Auth tokens are sent via cookies (withCredentials: true)
-    // If using localStorage token, uncomment:
-    // const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
-    // if (token) config.headers.Authorization = `Bearer ${token}`;
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => Promise.reject(error),
 );
 
 // Response interceptor
@@ -42,7 +38,7 @@ apiClient.interceptors.response.use(
       "An unexpected error occurred";
 
     return Promise.reject(new Error(message));
-  }
+  },
 );
 
 export default apiClient;
